@@ -6,7 +6,7 @@ export const PROJECTS = [
       "Обучили модель оценивать жилую недвижимость за 3 секунды с точностью >92%",
     description:
       "И сэкономили время и деньги крупного контрагента в финансовом секторе",
-    image: IMAGES.project01,
+    image: IMAGES.caseInWork01,
     caseLink: "#",
   },
   {
@@ -14,13 +14,13 @@ export const PROJECTS = [
       "Сайт-агрегатор для продажи модульных домов с админ панелью на 4 роли",
     description:
       "С ответвлениями по 4 направлениям, калькулятором, подбором и статьями",
-    image: IMAGES.project02,
+    image: IMAGES.caseInWork02,
     caseLink: "#",
   },
   {
     headline: "Проект 3",
     description: "Описание третьего проекта",
-    image: IMAGES.project03,
+    image: IMAGES.caseInWork03,
     caseLink: "#",
   },
 ] as const;
