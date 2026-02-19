@@ -5,12 +5,43 @@ import { Button } from "@heroui/react";
 import { Container } from "@/components/ui/Container";
 import { IMAGES } from "@/constants/images";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+const labelVariants = (delay: number, visibleScale = 1) =>
+    ({
+        hidden: {
+            scale: 0.92,
+            y: 16,
+        },
+        visible: {
+            scale: visibleScale,
+            y: 0,
+            transition: {
+                type: "spring" as const,
+                stiffness: 120,
+                damping: 22,
+                mass: 0.8,
+                delay,
+            },
+        },
+        idle: {
+            scale: 0.98,
+            y: 8,
+            transition: {
+                type: "spring" as const,
+                stiffness: 80,
+                damping: 18,
+            },
+        },
+    }) satisfies import("framer-motion").Variants;
 
 export function HeroSection() {
+    const [isHovered, setIsHovered] = useState(false);
     return (
         <section className="relative w-full overflow-hidden bg-white">
             <Container className="pb-12 pt-16">
-                <div className="flex flex-col px-12 gap-8 lg:flex-row lg:items-start lg:justify-between">
+                <div className="flex flex-col px-12 gap-8 lg:flex-row items-end lg:justify-between">
                     <h1 className="font-nevermind max-w-[570px] text-[40px] font-normal leading-tight text-[#101010]">
                         Разрабатываем, поддерживаем и развиваем web & ai решения
                     </h1>
@@ -66,7 +97,11 @@ export function HeroSection() {
                     </div>
                 </div>
 
-                <div className="relative mt-20 h-[480px] overflow-hidden rounded-2xl bg-[#000] group">
+                <div
+                    className="relative mt-20 h-[480px] overflow-hidden rounded-2xl bg-[#000]"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
                     <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-12">
                         <div>
                             <h2 className="font-nevermind max-w-[640px] text-[40px] font-normal leading-tight text-white">
@@ -106,30 +141,45 @@ export function HeroSection() {
 
                     <div className="pointer-events-none absolute inset-0 z-20 ">
                         {/* Крупные студии — верхний пик графика */}
-                        <div className="absolute right-[11%] top-[22%] flex flex-col justify-center items-center">
-                            <span className="rounded-md group-hover:scale-105 delay-100 transition-all bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
+                        <motion.div
+                            className="absolute right-[11%] top-[22%] flex flex-col justify-center items-center origin-center"
+                            variants={labelVariants(0)}
+                            initial="idle"
+                            animate={isHovered ? "visible" : "idle"}
+                        >
+                            <span className="rounded-md bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
                                 Крупные студии
                             </span>
                             <div
                                 className="h-[100px] w-[1px] bg-[rgba(255,255,255,0.2)]"
                                 aria-hidden
                             />
-                            <div className="h-[6px] w-[6px] bg-[rgba(255,255,255,0.2)] rounded-full"></div>
-                        </div>
-                        <div className="absolute right-[45%] bottom-[5%] flex flex-col justify-center items-center">
-                            <span className="rounded-md group-hover:scale-105 delay-300 transition-all bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
+                            <div className="h-[6px] w-[6px] bg-[rgba(255,255,255,0.2)] rounded-full" />
+                        </motion.div>
+                        <motion.div
+                            className="absolute right-[45%] bottom-[5%] flex flex-col justify-center items-center origin-center"
+                            variants={labelVariants(0.25)}
+                            initial="idle"
+                            animate={isHovered ? "visible" : "idle"}
+                        >
+                            <span className="rounded-md bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
                                 Фрилансеры
                             </span>
                             <div
                                 className="h-[100px] w-[1px] bg-[rgba(255,255,255,0.2)]"
                                 aria-hidden
                             />
-                            <div className="h-[6px] w-[6px] bg-[rgba(255,255,255,0.2)] rounded-full"></div>
-                        </div>
+                            <div className="h-[6px] w-[6px] bg-[rgba(255,255,255,0.2)] rounded-full" />
+                        </motion.div>
 
                         {/* Студия goji — нижний пик (оптимальная зона) */}
-                        <div className="absolute right-[27%] bottom-[18%] flex flex-col justify-center items-center">
-                            <span className="rounded-md group-hover:scale-105 delay-500 transition-all bg-[#FF4314] p-3 font-sans text-sm font-medium text-white">
+                        <motion.div
+                            className="absolute right-[27%] bottom-[18%] flex flex-col justify-center items-center origin-center"
+                            variants={labelVariants(0.5, 1.3)}
+                            initial="idle"
+                            animate={isHovered ? "visible" : "idle"}
+                        >
+                            <span className="rounded-md bg-[#FF4314] p-3 font-sans text-sm font-medium text-white">
                                 Студия{" "}
                                 <span className="font-soyuz font-bold">
                                     Годжи
@@ -139,8 +189,8 @@ export function HeroSection() {
                                 className="h-[100px] w-[1px] bg-[#FF4314]"
                                 aria-hidden
                             />
-                            <div className="h-[6px] w-[6px] bg-[#FF4314] rounded-full"></div>
-                        </div>
+                            <div className="h-[6px] w-[6px] bg-[#FF4314] rounded-full" />
+                        </motion.div>
                     </div>
                 </div>
             </Container>
