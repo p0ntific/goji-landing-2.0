@@ -5,18 +5,18 @@ import { ProjectCard } from "@/components/shared/ProjectCard";
 import { PROJECTS } from "@/constants/projects";
 
 export function LatestProjectsSection() {
-  return (
-    <Section>
-      <Container>
-        <Heading level={2} className="mb-12">
-          Последние проекты
-        </Heading>
-        <div className="flex flex-col gap-8">
-          {PROJECTS.map((project, i) => (
-            <ProjectCard key={i} {...project} />
-          ))}
-        </div>
-      </Container>
-    </Section>
-  );
+    return (
+        <Section>
+            <Container className="flex flex-col gap-8">
+                <h2 className="font-nevermind max-w-[640px] text-[40px] font-normal leading-tight ">
+                    Последние проекты
+                </h2>
+                <div className="flex flex-col gap-8">
+                    {PROJECTS.map((project, i) => (
+                        <ProjectCard key={i} {...project} />
+                    ))}
+                </div>
+            </Container>
+        </Section>
+    );
 }

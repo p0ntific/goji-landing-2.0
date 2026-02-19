@@ -11,20 +11,22 @@ export function DirectionsSection() {
                     Основные направления
                 </h2>
                 <div className="grid grid-cols-3 gap-6">
-                    {DIRECTIONS.slice(0, 3).map((item) => (
+                    {DIRECTIONS.slice(0, 3).map((item, i) => (
                         <DirectionCard
-                            variant="vertical"
                             key={item.title}
                             {...item}
+                            variant="vertical"
+                            seed={i}
                         />
                     ))}
                 </div>
                 <div className="grid grid-cols-2 gap-6">
-                    {DIRECTIONS.slice(3, 6).map((item) => (
+                    {DIRECTIONS.slice(3, 6).map((item, i) => (
                         <DirectionCard
-                            variant="horizontal"
                             key={item.title}
                             {...item}
+                            variant="horizontal"
+                            seed={i + 3}
                         />
                     ))}
                 </div>

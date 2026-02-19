@@ -9,19 +9,19 @@ import { HowWeWorkSection } from "@/components/sections/HowWeWorkSection";
 import { CalSection } from "@/components/sections/CalSection";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <HeroSection />
-        <DirectionsSection />
-        <ProjectsInWorkSection />
-        <CasesSection />
-        <LatestProjectsSection />
-        <HowWeWorkSection />
-        <CalSection />
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="min-h-screen bg-white">
+            <Header />
+            <main>
+                <HeroSection />
+                <DirectionsSection />
+                <LatestProjectsSection />
+                <ProjectsInWorkSection />
+                <CasesSection />
+                <HowWeWorkSection />
+                <CalSection />
+            </main>
+            <Footer />
+        </div>
+    );
 }

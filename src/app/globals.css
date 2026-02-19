@@ -38,3 +38,30 @@ body {
     color: var(--foreground);
     font-family: var(--font-onest);
 }
+
+/* Matrix-style animation for direction cards */
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes matrix-flicker {
+    0%, 100% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
