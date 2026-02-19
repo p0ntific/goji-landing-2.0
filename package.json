@@ -1,7 +1,8 @@
 {
-  "name": "goji-landing-temp",
+  "name": "goji-landing",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +10,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@heroui/react": "^2.8.9",
+    "framer-motion": "^12.34.2",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
