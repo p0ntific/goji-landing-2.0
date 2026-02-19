@@ -7,7 +7,7 @@ import { PROJECTS } from "@/constants/projects";
 export function LatestProjectsSection() {
     return (
         <Section>
-            <Container className="flex flex-col gap-8">
+            <Container className="flex flex-col gap-8 px-12">
                 <h2 className="font-nevermind max-w-[640px] text-[40px] font-normal leading-tight ">
                     Последние проекты
                 </h2>

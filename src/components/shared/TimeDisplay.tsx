@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-const CX = 245;
-const CY = 245;
-const SVG_SIZE = 490;
+const CX = 330;
+const CY = 292;
+const SVG_SIZE_X = 660;
+const SVG_SIZE_Y = 584;
 const CENTER_R = 13; // 26px / 2
 const HAND_FORWARD = 210; // forward from center
-const HAND_TAIL = 55; // tail behind center
+const HAND_TAIL = 35; // tail behind center
 
 export function TimeDisplay() {
     const [date, setDate] = useState(() => new Date());
@@ -39,11 +40,11 @@ export function TimeDisplay() {
     const handTail = toXY(secondAngle + 180, HAND_TAIL);
 
     return (
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 relative">
             <svg
-                width={SVG_SIZE}
-                height={SVG_SIZE}
-                viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
+                width={SVG_SIZE_X}
+                height={SVG_SIZE_Y}
+                viewBox={`0 0 ${SVG_SIZE_X} ${SVG_SIZE_Y}`}
                 aria-hidden
             >
                 {/* 4 gray lines on all sides: 54px → 245px from center */}
@@ -56,25 +57,25 @@ export function TimeDisplay() {
                     strokeWidth={2}
                 />
                 <line
-                    x1={CX + 54}
+                    x1={CX + 245}
                     y1={CY}
-                    x2={CX + 245}
+                    x2={CX + 300}
                     y2={CY}
                     stroke="#D1D5DB"
                     strokeWidth={2}
                 />
                 <line
                     x1={CX}
-                    y1={CY + 54}
+                    y1={CY + 245}
                     x2={CX}
-                    y2={CY + 245}
+                    y2={CY + 300}
                     stroke="#D1D5DB"
                     strokeWidth={2}
                 />
                 <line
-                    x1={CX - 54}
+                    x1={CX - 245}
                     y1={CY}
-                    x2={CX - 245}
+                    x2={CX - 300}
                     y2={CY}
                     stroke="#D1D5DB"
                     strokeWidth={2}
@@ -115,17 +116,22 @@ export function TimeDisplay() {
             </svg>
 
             {/* Moscow + digital time */}
-            <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-400">Moscow</span>
-                <span className="rounded-lg border border-gray-200 px-2.5 py-1.5 font-mono text-base font-semibold text-[#1A1A1A]">
-                    {hoursStr}
-                </span>
-                <span className="font-mono text-base font-semibold text-[#1A1A1A]">
-                    :
-                </span>
-                <span className="rounded-lg border border-gray-200 px-2.5 py-1.5 font-mono text-base font-semibold text-[#1A1A1A]">
-                    {minutesStr}
-                </span>
+            <div className="flex flex-col w-[730px]  items-center z-10 gap-12 absolute top-1/2 -translate-y-1/3 left-1/2 -translate-x-1/2">
+                <h2 className="font-nevermind text-[40px] leading-[80px] font-normal ">
+                    Проекты над которыми мы работаем в настоящее время
+                </h2>
+                <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-400">Moscow</span>
+                    <span className="rounded-lg border bg-white border-gray-200 px-2.5 py-1.5 font-mono text-base font-semibold text-[#1A1A1A]">
+                        {hoursStr}
+                    </span>
+                    <span className="font-mono text-base font-semibold text-[#1A1A1A]">
+                        :
+                    </span>
+                    <span className="rounded-lg border bg-white border-gray-200 px-2.5 py-1.5 font-mono text-base font-semibold text-[#1A1A1A]">
+                        {minutesStr}
+                    </span>
+                </div>
             </div>
         </div>
     );

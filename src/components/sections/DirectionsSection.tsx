@@ -6,7 +6,7 @@ import { DIRECTIONS } from "@/constants/directions";
 export function DirectionsSection() {
     return (
         <Section>
-            <Container className="flex flex-col gap-6">
+            <Container className="px-12 flex flex-col gap-6">
                 <h2 className="font-nevermind max-w-[640px] text-[40px] font-normal leading-tight text-black">
                     Основные направления
                 </h2>
