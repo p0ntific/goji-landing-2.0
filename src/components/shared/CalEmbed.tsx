@@ -15,7 +15,7 @@ export function CalEmbed({ calLink }: CalEmbedProps) {
                 theme: "dark",
                 styles: {
                     branding: { brandColor: "#ffffff" },
-                    body: { background: "transparent" },
+                    body: { background: "#171717" },
                 },
                 cssVarsPerTheme: {
                     dark: {
@@ -39,8 +39,15 @@ export function CalEmbed({ calLink }: CalEmbedProps) {
     }, []);
 
     return (
-        <div className="h-[1435px] md:h-[456px] w-full md:w-[960px] overflow-hidden rounded-2xl">
-            <Cal calLink={calLink} config={{ theme: "dark" }} />
+        <div className=" w-full md:max-w-[960px] overflow-hidden rounded-3xl">
+            <Cal
+                calLink={calLink}
+                config={{
+                    "ui.color-scheme": "dark",
+                    theme: "dark",
+                    "cal.embed.pageType": "user.event.booking.slots",
+                }}
+            />
         </div>
     );
 }
