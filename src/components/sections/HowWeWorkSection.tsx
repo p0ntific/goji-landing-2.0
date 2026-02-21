@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { ACCORDION_ITEMS } from "@/constants/accordion";
 import Image from "next/image";
 import { IMAGES } from "@/constants/images";
+import { CONTENT } from "@/constants/content";
 import Link from "next/link";
 
 export function HowWeWorkSection() {
@@ -13,10 +14,16 @@ export function HowWeWorkSection() {
 
     return (
         <Section>
-            <Container className="px-12">
-                <div className="grid grid-cols-2 gap-16 h-[580px]">
-                    <div className="flex flex-col gap-6 justify-between">
-                        <h2 className="font-nevermind max-w-[640px] text-[40px] font-normal leading-tight ">
+            <Container className="px-[25px] md:px-12">
+                <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 md:h-[580px]">
+                    {/* Title — visible on mobile above accordion */}
+                    <h2 className="font-nevermind max-w-[640px] text-[28px] md:text-[40px] font-normal leading-tight md:hidden">
+                        Как мы работаем
+                    </h2>
+
+                    {/* Desktop left column: title + manager */}
+                    <div className="hidden md:flex flex-col gap-6 justify-between">
+                        <h2 className="font-nevermind max-w-[640px] text-[40px] font-normal leading-tight">
                             Как мы работаем
                         </h2>
                         <div className="flex flex-col gap-6">
@@ -42,7 +49,7 @@ export function HowWeWorkSection() {
                             </div>
                             <div className="flex gap-2">
                                 <Link
-                                    href="#"
+                                    href="#cal"
                                     className="flex gap-5 items-center border p-2 pl-4 font-medium rounded-xl bg-white text-[#101010]"
                                     style={{
                                         borderColor: "rgba(16, 16, 16, 0.1)",
@@ -51,13 +58,15 @@ export function HowWeWorkSection() {
                                     Назначить созвон
                                     <Image
                                         src={IMAGES.callIcon}
-                                        alt="Telemost"
+                                        alt=""
                                         width={32}
                                         height={32}
                                     />
                                 </Link>
                                 <Link
-                                    href="#"
+                                    href={CONTENT.writeLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex gap-5 items-center border p-2 pl-4 font-medium rounded-xl bg-white text-[#101010]"
                                     style={{
                                         borderColor: "rgba(16, 16, 16, 0.1)",
@@ -66,7 +75,7 @@ export function HowWeWorkSection() {
                                     Написать
                                     <Image
                                         src={IMAGES.messageIcon}
-                                        alt="Message us"
+                                        alt=""
                                         width={32}
                                         height={32}
                                     />
@@ -74,8 +83,10 @@ export function HowWeWorkSection() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Accordion */}
                     <div
-                        className="flex flex-col rounded-xl border h-full overflow-hidden"
+                        className="flex flex-col rounded-xl border overflow-hidden h-[480px] md:h-full"
                         style={{ borderColor: "rgba(16, 16, 16, 0.1)" }}
                     >
                         {ACCORDION_ITEMS.map((item, i) => {
@@ -108,28 +119,88 @@ export function HowWeWorkSection() {
                                                   }
                                                 : {}
                                         }
-                                        className="flex items-center justify-between w-full h-[90px] shrink-0 px-5 cursor-pointer"
+                                        className="flex items-center justify-between w-full h-[70px] md:h-[90px] shrink-0 px-4 md:px-5 cursor-pointer"
                                     >
-                                        <div className="flex items-center gap-4">
-                                            <span className="text-[#101010] opacity-40 font-sans text-[16px] tabular-nums">
+                                        <div className="flex items-center gap-3 md:gap-4">
+                                            <span className="text-[#101010] opacity-40 font-sans text-[14px] md:text-[16px] tabular-nums">
                                                 {String(i + 1).padStart(2, "0")}
                                             </span>
-                                            <span className="font-sans text-[18px] text-[#101010]">
+                                            <span className="font-sans text-[16px] md:text-[18px] text-[#101010] text-left">
                                                 {item.title}
                                             </span>
                                         </div>
-                                        <span className="text-[#101010] text-[28px] font-extralight leading-none select-none">
+                                        <span className="text-[#101010] text-[24px] md:text-[28px] font-extralight leading-none select-none">
                                             {isActive ? "−" : "+"}
                                         </span>
                                     </button>
                                     {isActive && item.content && (
-                                        <p className="text-[#101010] opacity-60 text-[16px] px-5 pl-[52px]">
+                                        <p className="text-[#101010] opacity-60 text-[14px] md:text-[16px] px-4 md:px-5 pl-4 md:pl-[52px] pb-4 md:pb-0 text-left">
                                             {item.content}
                                         </p>
                                     )}
                                 </div>
                             );
                         })}
+                    </div>
+
+                    {/* Mobile manager block — below accordion */}
+                    <div className="flex flex-col gap-4 md:hidden">
+                        <div className="flex shrink-0 gap-4">
+                            <Image
+                                src={IMAGES.manager}
+                                alt="Егор"
+                                width={52}
+                                height={52}
+                                className="h-10 w-10 rounded-full object-cover"
+                            />
+                            <div className="flex flex-col">
+                                <span
+                                    className="font-sans text-[16px] text-[#101010]"
+                                    style={{ opacity: 0.6 }}
+                                >
+                                    Sales manager
+                                </span>
+                                <span className="font-sans text-[16px] font-medium text-[#101010]">
+                                    Егор
+                                </span>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <Link
+                                href="#cal"
+                                className="flex justify-between items-center border p-2 pl-3 text-sm font-medium rounded-xl bg-white text-[#101010]"
+                                style={{
+                                    borderColor: "rgba(16, 16, 16, 0.1)",
+                                }}
+                            >
+                                Назначить созвон
+                                <Image
+                                    src={IMAGES.callIcon}
+                                    alt=""
+                                    width={32}
+                                    height={32}
+                                    className="h-7 w-7"
+                                />
+                            </Link>
+                            <Link
+                                href={CONTENT.writeLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex justify-between items-center border p-2 pl-3 text-sm font-medium rounded-xl bg-white text-[#101010]"
+                                style={{
+                                    borderColor: "rgba(16, 16, 16, 0.1)",
+                                }}
+                            >
+                                Написать
+                                <Image
+                                    src={IMAGES.messageIcon}
+                                    alt=""
+                                    width={32}
+                                    height={32}
+                                    className="h-7 w-7"
+                                />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </Container>

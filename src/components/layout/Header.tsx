@@ -9,7 +9,7 @@ export function Header() {
     return (
         <header className="bg-white">
             <Container>
-                <div className="flex h-24 px-12 items-center">
+                <div className="flex h-16 md:h-24 px-[25px] md:px-12 items-center">
                     <Link href="/" className="flex items-center gap-2">
                         <Image
                             src={IMAGES.logo}

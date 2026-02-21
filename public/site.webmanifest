@@ -1,0 +1,22 @@
+{
+    "name": "годжи — Студия разработки",
+    "short_name": "годжи",
+    "description": "Студия веб-разработки и AI решений",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ff4314",
+    "lang": "ru",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/logo.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}
