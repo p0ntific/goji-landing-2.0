@@ -22,17 +22,17 @@ export function Button({
     const variantClasses = {
         primary: isDisabled
             ? "bg-[#1A1A1A] text-white opacity-50"
-            : "bg-[#1A1A1A] text-white",
+            : "bg-[#1A1A1A] text-white hover:bg-[#2a2a2a] hover:shadow-md transition-colors transition-shadow duration-200",
         secondary: isDisabled
             ? "bg-gray-100 text-[#1A1A1A] border border-gray-200 opacity-50"
-            : "bg-gray-100 text-[#1A1A1A] border border-gray-200 hover:bg-gray-200",
+            : "bg-gray-100 text-[#1A1A1A] border border-gray-200 hover:bg-gray-200 hover:border-gray-300 transition-colors duration-200",
         bordered: isDisabled
             ? "bg-transparent border border-gray-300 text-[#1A1A1A] opacity-50"
-            : "bg-transparent border border-gray-300 text-[#1A1A1A] hover:bg-gray-50",
+            : "bg-transparent border border-gray-300 text-[#1A1A1A] hover:bg-gray-50 hover:border-gray-400 transition-colors duration-200",
     };
 
     const baseClasses =
-        "rounded-xl px-6 py-3 font-medium transition-colors" +
+        "rounded-xl px-6 py-3 font-medium" +
         (isDisabled ? " cursor-not-allowed" : "");
 
     if (href) {

@@ -49,7 +49,7 @@ export function CalSection() {
                                     href={CONTENT.writeLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex justify-between md:justify-start w-full md:w-auto gap-3 md:gap-5 items-center border mt-10 md:mt-20 border-[rgba(255,255,255,0.1)] p-2 pl-3 md:pl-4 text-sm md:text-base font-medium rounded-xl text-white"
+                                    className="flex justify-between md:justify-start w-full md:w-auto gap-3 md:gap-5 items-center border mt-10 md:mt-20 border-[rgba(255,255,255,0.1)] p-2 pl-3 md:pl-4 text-sm md:text-base font-medium rounded-xl text-white transition-colors duration-200 hover:bg-white/10 hover:border-white/20"
                                 >
                                     Обсудить в переписке
                                     <Image

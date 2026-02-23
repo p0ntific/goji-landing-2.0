@@ -103,7 +103,7 @@ export function Footer() {
 
                     <button
                         onClick={scrollToTop}
-                        className="flex justify-between items-center border p-3 text-sm font-medium rounded-xl bg-white text-[#101010] cursor-pointer"
+                        className="flex justify-between items-center border p-3 text-sm font-medium rounded-xl bg-white text-[#101010] cursor-pointer transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
                         style={{ borderColor: "rgba(16, 16, 16, 0.1)" }}
                     >
                         Вернуться наверх

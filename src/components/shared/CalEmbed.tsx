@@ -39,13 +39,14 @@ export function CalEmbed({ calLink }: CalEmbedProps) {
     }, []);
 
     return (
-        <div className=" w-full md:max-w-[960px] overflow-hidden rounded-3xl">
+        <div className="w-full md:max-w-[960px] overflow-hidden rounded-3xl [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
             <Cal
                 calLink={calLink}
                 config={{
                     "ui.color-scheme": "dark",
                     theme: "dark",
                     "cal.embed.pageType": "user.event.booking.slots",
+                    iframeAttrs: { style: "overflow: hidden" },
                 }}
             />
         </div>

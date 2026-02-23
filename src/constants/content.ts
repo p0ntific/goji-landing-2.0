@@ -1,5 +1,5 @@
 export const CONTENT = {
-    calLink: "андреи-горошко/30min",
+    calLink: "maksim-igitov/30min",
     allCasesLink: "#",
     privacyLink: "/documents/Политика_конфиденциальности.docx",
     writeLink: "https://t.me/MaksIgitov",
