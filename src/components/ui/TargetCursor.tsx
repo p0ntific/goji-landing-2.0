@@ -32,6 +32,9 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     const [cursorTheme, setCursorTheme] = useState<"default" | "light">(
         "default",
     );
+    const [isDefaultCursorZone, setIsDefaultCursorZone] = useState(false);
+    const originalCursorRef = useRef("");
+    const lastMouseRef = useRef({ x: 0, y: 0 });
 
     useEffect(() => {
         const hasTouchScreen =
@@ -63,9 +66,44 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     }, []);
 
     useEffect(() => {
-        if (isMobile || !cursorRef.current) return;
+        if (isMobile) return;
+        originalCursorRef.current = document.body.style.cursor;
+        lastMouseRef.current = {
+            x: window.innerWidth / 2,
+            y: window.innerHeight / 2,
+        };
+        const updateCursorState = (x: number, y: number) => {
+            const el = document.elementFromPoint(x, y);
+            setCursorTheme(el?.closest(".dark-cursor") ? "light" : "default");
+            const inDefaultZone = !!el?.closest(".default-cursor");
+            setIsDefaultCursorZone(inDefaultZone);
+            document.body.style.cursor = inDefaultZone
+                ? "default"
+                : hideDefaultCursor
+                  ? "none"
+                  : originalCursorRef.current;
+        };
+        const moveHandler = (e: MouseEvent) => {
+            lastMouseRef.current = { x: e.clientX, y: e.clientY };
+            moveCursor(e.clientX, e.clientY);
+            updateCursorState(e.clientX, e.clientY);
+        };
+        const scrollHandler = () => {
+            const { x, y } = lastMouseRef.current;
+            updateCursorState(x, y);
+        };
+        window.addEventListener("mousemove", moveHandler);
+        window.addEventListener("scroll", scrollHandler, { passive: true });
+        return () => {
+            window.removeEventListener("mousemove", moveHandler);
+            window.removeEventListener("scroll", scrollHandler);
+            document.body.style.cursor = originalCursorRef.current;
+        };
+    }, [isMobile, moveCursor, hideDefaultCursor]);
 
-        const originalCursor = document.body.style.cursor;
+    useEffect(() => {
+        if (isMobile || isDefaultCursorZone || !cursorRef.current) return;
+
         if (hideDefaultCursor) {
             document.body.style.cursor = "none";
         }
@@ -144,13 +182,6 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
         };
 
         tickerFnRef.current = tickerFn;
-
-        const moveHandler = (e: MouseEvent) => {
-            moveCursor(e.clientX, e.clientY);
-            const el = document.elementFromPoint(e.clientX, e.clientY);
-            setCursorTheme(el?.closest(".dark-cursor") ? "light" : "default");
-        };
-        window.addEventListener("mousemove", moveHandler);
 
         const scrollHandler = () => {
             if (!activeTarget || !cursorRef.current) return;
@@ -309,7 +340,6 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
             if (tickerFnRef.current) {
                 gsap.ticker.remove(tickerFnRef.current);
             }
-            window.removeEventListener("mousemove", moveHandler);
             window.removeEventListener(
                 "mouseover",
                 enterHandler as EventListener,
@@ -320,22 +350,21 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
             if (activeTarget) {
                 cleanupTarget(activeTarget);
             }
-            document.body.style.cursor = originalCursor;
             isActiveRef.current = false;
             targetCornerPositionsRef.current = null;
             activeStrengthRef.current.current = 0;
         };
     }, [
         targetSelector,
-        moveCursor,
         constants,
         hideDefaultCursor,
         isMobile,
+        isDefaultCursorZone,
         hoverDuration,
         parallaxOn,
     ]);
 
-    if (isMobile) {
+    if (isMobile || isDefaultCursorZone) {
         return null;
     }
 

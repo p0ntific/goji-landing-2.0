@@ -34,11 +34,11 @@ export function CalSection() {
                                 </p>
                             </div>
                             <CalEmbed calLink={CONTENT.calLink} />
-                            <p className="mt-4 text-xs md:text-sm text-[rgba(255,255,255,0.4)] text-center max-w-2xl px-[25px] md:px-0">
+                            <p className=" mt-4 text-xs md:text-sm text-[rgba(255,255,255,0.4)] text-center max-w-2xl px-[25px] md:px-0">
                                 Создавая встречу, вы соглашаетесь на{" "}
                                 <a
                                     href="/documents/Согласие_на_обработку_персональных_данных1.docx"
-                                    className="underline hover:text-[rgba(255,255,255,0.6)] transition-colors"
+                                    className="cursor-target underline hover:text-[rgba(255,255,255,0.6)] transition-colors"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

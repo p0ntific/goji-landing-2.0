@@ -39,7 +39,7 @@ export function CalEmbed({ calLink }: CalEmbedProps) {
     }, []);
 
     return (
-        <div className="w-full md:max-w-[960px] overflow-hidden rounded-3xl [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+        <div className="default-cursor p-4 w-full md:max-w-[960px] overflow-hidden rounded-3xl [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
             <Cal
                 calLink={calLink}
                 config={{
