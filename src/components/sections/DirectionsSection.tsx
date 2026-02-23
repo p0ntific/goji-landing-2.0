@@ -16,7 +16,6 @@ export function DirectionsSection() {
                             key={item.title}
                             {...item}
                             variant="vertical"
-                            seed={i}
                         />
                     ))}
                 </div>
@@ -26,7 +25,6 @@ export function DirectionsSection() {
                             key={item.title}
                             {...item}
                             variant="horizontal"
-                            seed={i + 3}
                         />
                     ))}
                 </div>

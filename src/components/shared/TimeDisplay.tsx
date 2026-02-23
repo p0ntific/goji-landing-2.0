@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 const CX = 330;
 const CY = 292;
 const SVG_SIZE_X = 660;

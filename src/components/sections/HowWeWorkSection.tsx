@@ -29,8 +29,8 @@ export function HowWeWorkSection() {
                         <div className="flex flex-col gap-6">
                             <div className="flex shrink-0 gap-4">
                                 <Image
-                                    src={IMAGES.manager}
-                                    alt="Егор"
+                                    src={IMAGES.founder}
+                                    alt="Максим"
                                     width={52}
                                     height={52}
                                     className="rounded-full object-cover"
@@ -40,10 +40,10 @@ export function HowWeWorkSection() {
                                         className="font-sans text-[18px] text-[#101010]"
                                         style={{ opacity: 0.6 }}
                                     >
-                                        Sales manager
+                                        Founder
                                     </span>
                                     <span className="font-sans text-[18px] font-medium text-[#101010]">
-                                        Егор
+                                        Максим
                                     </span>
                                 </div>
                             </div>
@@ -147,8 +147,8 @@ export function HowWeWorkSection() {
                     <div className="flex flex-col gap-4 md:hidden">
                         <div className="flex shrink-0 gap-4">
                             <Image
-                                src={IMAGES.manager}
-                                alt="Егор"
+                                src={IMAGES.founder}
+                                alt="Максим"
                                 width={52}
                                 height={52}
                                 className="h-10 w-10 rounded-full object-cover"
@@ -158,10 +158,10 @@ export function HowWeWorkSection() {
                                     className="font-sans text-[16px] text-[#101010]"
                                     style={{ opacity: 0.6 }}
                                 >
-                                    Sales manager
+                                    Founder
                                 </span>
                                 <span className="font-sans text-[16px] font-medium text-[#101010]">
-                                    Егор
+                                    Максим
                                 </span>
                             </div>
                         </div>

@@ -3,6 +3,7 @@ export const IMAGES = {
     mainBg: "/main-bg.png",
     mainBgMobile: "/main-bg-mobile.png",
     manager: "/manager.png",
+    founder: "/founder.png",
     callIcon: "/call-icon.svg",
     messageIcon: "/message-icon.svg",
     calBackground: "/bg-bottom.png",

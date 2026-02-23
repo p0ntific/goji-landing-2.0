@@ -6,39 +6,8 @@ import { Container } from "@/components/ui/Container";
 import { IMAGES } from "@/constants/images";
 import { CONTENT } from "@/constants/content";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useState } from "react";
-
-const labelVariants = (delay: number, visibleScale = 1) =>
-    ({
-        hidden: {
-            scale: 0.92,
-            y: 16,
-        },
-        visible: {
-            scale: visibleScale,
-            y: 0,
-            transition: {
-                type: "spring" as const,
-                stiffness: 120,
-                damping: 22,
-                mass: 0.8,
-                delay,
-            },
-        },
-        idle: {
-            scale: 0.98,
-            y: 8,
-            transition: {
-                type: "spring" as const,
-                stiffness: 80,
-                damping: 18,
-            },
-        },
-    }) satisfies import("framer-motion").Variants;
 
 export function HeroSection() {
-    const [isHovered, setIsHovered] = useState(false);
     return (
         <section className="relative w-full overflow-hidden bg-white">
             <Container className="pb-8 pt-8 md:pb-12 md:pt-16">
@@ -102,11 +71,7 @@ export function HeroSection() {
                     </div>
                 </div>
 
-                <div
-                    className="relative md:mx-0 mt-10 md:mt-20 h-[680px] md:h-[480px] overflow-hidden rounded-2xl bg-[#000]"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                >
+                <div className="relative md:mx-0 mt-10 md:mt-20 h-[680px] md:h-[480px] overflow-hidden rounded-2xl bg-[#000]">
                     <div className="relative z-10 flex h-full flex-col justify-between p-6 md:p-12">
                         <div>
                             <h2 className="font-nevermind max-w-[640px] text-[24px] md:text-[40px] font-normal leading-tight text-white">
@@ -160,12 +125,7 @@ export function HeroSection() {
                     {/* Desktop labels */}
                     <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
                         {/* Крупные студии — верхний пик графика */}
-                        <motion.div
-                            className="absolute right-[11%] top-[22%] flex flex-col justify-center items-center origin-center"
-                            variants={labelVariants(0)}
-                            initial="idle"
-                            animate={isHovered ? "visible" : "idle"}
-                        >
+                        <div className="absolute right-[11%] top-[22%] flex flex-col justify-center items-center origin-center">
                             <span className="rounded-md bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
                                 Крупные студии
                             </span>
@@ -174,13 +134,8 @@ export function HeroSection() {
                                 aria-hidden
                             />
                             <div className="h-[6px] w-[6px] bg-[rgba(255,255,255,0.2)] rounded-full" />
-                        </motion.div>
-                        <motion.div
-                            className="absolute right-[45%] bottom-[5%] flex flex-col justify-center items-center origin-center"
-                            variants={labelVariants(0.25)}
-                            initial="idle"
-                            animate={isHovered ? "visible" : "idle"}
-                        >
+                        </div>
+                        <div className="absolute right-[45%] bottom-[5%] flex flex-col justify-center items-center origin-center">
                             <span className="rounded-md bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
                                 Фрилансеры
                             </span>
@@ -189,15 +144,10 @@ export function HeroSection() {
                                 aria-hidden
                             />
                             <div className="h-[6px] w-[6px] bg-[rgba(255,255,255,0.2)] rounded-full" />
-                        </motion.div>
+                        </div>
 
                         {/* Студия goji — нижний пик (оптимальная зона) */}
-                        <motion.div
-                            className="absolute right-[27%] bottom-[18%] flex flex-col justify-center items-center origin-center"
-                            variants={labelVariants(0.5, 1.3)}
-                            initial="idle"
-                            animate={isHovered ? "visible" : "idle"}
-                        >
+                        <div className="absolute right-[27%] bottom-[18%] flex flex-col justify-center items-center origin-center">
                             <span className="rounded-md bg-[#FF4314] p-3 font-sans text-sm font-medium text-white">
                                 Студия{" "}
                                 <span className="font-soyuz font-bold">
@@ -209,7 +159,7 @@ export function HeroSection() {
                                 aria-hidden
                             />
                             <div className="h-[6px] w-[6px] bg-[#FF4314] rounded-full" />
-                        </motion.div>
+                        </div>
                     </div>
 
                     {/* Mobile labels — always visible */}
