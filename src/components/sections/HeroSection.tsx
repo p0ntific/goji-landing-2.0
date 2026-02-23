@@ -71,7 +71,7 @@ export function HeroSection() {
                     </div>
                 </div>
 
-                <div className="relative md:mx-0 mt-10 md:mt-20 h-[680px] md:h-[480px] overflow-hidden rounded-2xl bg-[#000]">
+                <div className="relative md:mx-0 mt-10 md:mt-20 h-[680px] md:h-[480px] overflow-hidden rounded-2xl bg-[#000] dark-cursor">
                     <div className="relative z-10 flex h-full flex-col justify-between p-6 md:p-12">
                         <div>
                             <h2 className="font-nevermind max-w-[640px] text-[24px] md:text-[40px] font-normal leading-tight text-white">
@@ -126,7 +126,7 @@ export function HeroSection() {
                     <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
                         {/* Крупные студии — верхний пик графика */}
                         <div className="absolute right-[11%] top-[22%] flex flex-col justify-center items-center origin-center">
-                            <span className="rounded-md bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
+                            <span className="cursor-target pointer-events-auto rounded-md bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
                                 Крупные студии
                             </span>
                             <div
@@ -136,7 +136,7 @@ export function HeroSection() {
                             <div className="h-[6px] w-[6px] bg-[rgba(255,255,255,0.2)] rounded-full" />
                         </div>
                         <div className="absolute right-[45%] bottom-[5%] flex flex-col justify-center items-center origin-center">
-                            <span className="rounded-md bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
+                            <span className="cursor-target pointer-events-auto rounded-md bg-[#101010] border border-[rgba(255,255,255,0.2)] p-3 font-sans text-sm text-white">
                                 Фрилансеры
                             </span>
                             <div
@@ -148,7 +148,7 @@ export function HeroSection() {
 
                         {/* Студия goji — нижний пик (оптимальная зона) */}
                         <div className="absolute right-[27%] bottom-[18%] flex flex-col justify-center items-center origin-center">
-                            <span className="rounded-md bg-[#FF4314] p-3 font-sans text-sm font-medium text-white">
+                            <span className="cursor-target pointer-events-auto rounded-md bg-[#FF4314] p-3 font-sans text-sm font-medium text-white">
                                 Студия{" "}
                                 <span className="font-soyuz font-bold">
                                     Годжи

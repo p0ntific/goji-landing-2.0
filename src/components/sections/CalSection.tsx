@@ -9,7 +9,7 @@ import Link from "next/link";
 export function CalSection() {
     return (
         <Section id="cal">
-            <Container className="relative rounded-3xl md:rounded-[48px] overflow-hidden py-12 md:py-24 flex flex-col gap-6">
+            <Container className="relative dark-cursor rounded-3xl md:rounded-[48px] overflow-hidden py-12 md:py-24 flex flex-col gap-6">
                 <div className="absolute inset-0">
                     <Image
                         src={IMAGES.calBackground}
@@ -27,9 +27,10 @@ export function CalSection() {
                                     Обсудим вашу задачу — это бесплатно
                                 </h2>
                                 <p className="mt-4 md:mt-8 mb-8 md:mb-16 max-w-2xl text-sm md:text-base text-[rgba(255,255,255,0.6)]">
-                                    Даже если вы пока не понимаете что вам нужно, мы
-                                    можем сами подумать как можно решить вашу задачу
-                                    и предложить пути решения вместе с планом
+                                    Даже если вы пока не понимаете что вам
+                                    нужно, мы можем сами подумать как можно
+                                    решить вашу задачу и предложить пути решения
+                                    вместе с планом
                                 </p>
                             </div>
                             <CalEmbed calLink={CONTENT.calLink} />

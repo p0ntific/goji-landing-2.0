@@ -96,7 +96,7 @@ export function HowWeWorkSection() {
                             return (
                                 <div
                                     key={i}
-                                    className={`flex flex-col min-h-0 overflow-hidden transition-[flex] duration-300 ease-in-out ${isActive ? "rounded-xl border border-[#101010]" : ""}`}
+                                    className={`cursor-target flex flex-col min-h-0 overflow-hidden transition-[flex] duration-300 ease-in-out ${isActive ? "rounded-xl border border-[#101010]" : ""}`}
                                     style={{
                                         flex: isActive ? "1 1 0%" : "0 0 auto",
                                     }}
