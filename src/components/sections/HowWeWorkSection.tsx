@@ -50,7 +50,7 @@ export function HowWeWorkSection() {
                             <div className="flex gap-2">
                                 <Link
                                     href="#cal"
-                                    className="flex gap-5 items-center border p-2 pl-4 font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
+                                    className="cursor-target flex gap-5 items-center border p-2 pl-4 font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
                                     style={{
                                         borderColor: "rgba(16, 16, 16, 0.1)",
                                     }}
@@ -67,7 +67,7 @@ export function HowWeWorkSection() {
                                     href={CONTENT.writeLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex gap-5 items-center border p-2 pl-4 font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
+                                    className="cursor-target flex gap-5 items-center border p-2 pl-4 font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
                                     style={{
                                         borderColor: "rgba(16, 16, 16, 0.1)",
                                     }}
@@ -168,7 +168,7 @@ export function HowWeWorkSection() {
                         <div className="flex flex-col gap-2">
                             <Link
                                 href="#cal"
-                                className="flex justify-between items-center border p-2 pl-3 text-sm font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
+                                className="cursor-target flex justify-between items-center border p-2 pl-3 text-sm font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
                                 style={{
                                     borderColor: "rgba(16, 16, 16, 0.1)",
                                 }}
@@ -186,7 +186,7 @@ export function HowWeWorkSection() {
                                 href={CONTENT.writeLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex justify-between items-center border p-2 pl-3 text-sm font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
+                                className="cursor-target flex justify-between items-center border p-2 pl-3 text-sm font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
                                 style={{
                                     borderColor: "rgba(16, 16, 16, 0.1)",
                                 }}

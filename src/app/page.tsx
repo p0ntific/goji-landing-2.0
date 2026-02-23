@@ -7,10 +7,12 @@ import { CasesSection } from "@/components/sections/CasesSection";
 import { LatestProjectsSection } from "@/components/sections/LatestProjectsSection";
 import { HowWeWorkSection } from "@/components/sections/HowWeWorkSection";
 import { CalSection } from "@/components/sections/CalSection";
+import TargetCursor from "@/components/ui/TargetCursor";
 
 export default function Home() {
     return (
         <div className="min-h-screen bg-white overflow-x-hidden">
+            <TargetCursor />
             <Header />
             <main>
                 <HeroSection />

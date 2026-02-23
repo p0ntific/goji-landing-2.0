@@ -18,7 +18,7 @@ export function Footer() {
                 <div className="hidden md:grid grid-cols-[1fr_auto] gap-8 items-stretch">
                     <div className="flex flex-col gap-6">
                         <div className="flex h-24 items-center">
-                            <Link href="/" className="flex items-center gap-2">
+                            <Link href="/" className="cursor-target flex items-center gap-2">
                                 <Image
                                     src={IMAGES.logo}
                                     alt="Годжи"
@@ -51,7 +51,7 @@ export function Footer() {
                             href={CONTENT.privacyLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm text-gray-600 underline hover:text-gray-800"
+                            className="cursor-target text-sm text-gray-600 underline hover:text-gray-800"
                         >
                             {CONTENT.footer.privacy}
                         </a>
@@ -61,7 +61,7 @@ export function Footer() {
                 {/* Mobile layout */}
                 <div className="flex flex-col gap-6 md:hidden">
                     <div className="flex h-16 items-center">
-                        <Link href="/" className="flex items-center gap-2">
+                        <Link href="/" className="cursor-target flex items-center gap-2">
                             <Image
                                 src={IMAGES.logo}
                                 alt="Годжи"
@@ -83,7 +83,7 @@ export function Footer() {
                             href={CONTENT.privacyLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm text-gray-600 underline hover:text-gray-800"
+                            className="cursor-target text-sm text-gray-600 underline hover:text-gray-800"
                         >
                             {CONTENT.footer.privacy}
                         </a>
@@ -103,7 +103,7 @@ export function Footer() {
 
                     <button
                         onClick={scrollToTop}
-                        className="flex justify-between items-center border p-3 text-sm font-medium rounded-xl bg-white text-[#101010] cursor-pointer transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
+                        className="cursor-target flex justify-between items-center border p-3 text-sm font-medium rounded-xl bg-white text-[#101010] cursor-pointer transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
                         style={{ borderColor: "rgba(16, 16, 16, 0.1)" }}
                     >
                         Вернуться наверх

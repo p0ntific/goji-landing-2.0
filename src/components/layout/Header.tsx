@@ -10,7 +10,7 @@ export function Header() {
         <header className="bg-white">
             <Container>
                 <div className="flex h-16 md:h-24 px-[25px] md:px-12 items-center">
-                    <Link href="/" className="flex items-center gap-2">
+                    <Link href="/" className="cursor-target flex items-center gap-2">
                         <Image
                             src={IMAGES.logo}
                             alt="Годжи"

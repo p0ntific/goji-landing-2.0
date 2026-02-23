@@ -32,7 +32,7 @@ export function Button({
     };
 
     const baseClasses =
-        "rounded-xl px-6 py-3 font-medium" +
+        "cursor-target rounded-xl px-6 py-3 font-medium" +
         (isDisabled ? " cursor-not-allowed" : "");
 
     if (href) {

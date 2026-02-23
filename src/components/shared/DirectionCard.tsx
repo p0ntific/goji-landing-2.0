@@ -18,7 +18,7 @@ export function DirectionCard({
     return (
         <div
             className={cn(
-                "relative flex flex-col overflow-hidden rounded-xl border border-[rgba(16,16,16,0.1)] bg-white p-4 md:p-6",
+                "cursor-target relative flex flex-col overflow-hidden rounded-xl border border-[rgba(16,16,16,0.1)] bg-white p-4 md:p-6",
                 "bg-no-repeat bg-[length:65%] md:bg-[length:100%] bg-[position:bottom_center]",
                 variant === "vertical"
                     ? "h-[220px] md:h-[400px] pb-[90px] md:pb-[160px]"

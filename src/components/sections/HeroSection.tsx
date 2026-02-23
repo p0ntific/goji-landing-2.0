@@ -39,7 +39,7 @@ export function HeroSection() {
                         <div className="flex flex-col md:flex-row gap-2">
                             <Link
                                 href="#cal"
-                                className="flex justify-between md:justify-start gap-3 md:gap-5 items-center border p-2 pl-3 md:pl-4 text-sm md:text-base font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
+                                className="cursor-target flex justify-between md:justify-start gap-3 md:gap-5 items-center border p-2 pl-3 md:pl-4 text-sm md:text-base font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
                                 style={{ borderColor: "rgba(16, 16, 16, 0.1)" }}
                             >
                                 Назначить созвон
@@ -55,7 +55,7 @@ export function HeroSection() {
                                 href={CONTENT.writeLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex justify-between md:justify-start gap-3 md:gap-5 items-center border p-2 pl-3 md:pl-4 text-sm md:text-base font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
+                                className="cursor-target flex justify-between md:justify-start gap-3 md:gap-5 items-center border p-2 pl-3 md:pl-4 text-sm md:text-base font-medium rounded-xl bg-white text-[#101010] transition-colors duration-200 hover:bg-gray-50 hover:border-[rgba(16,16,16,0.2)]"
                                 style={{ borderColor: "rgba(16, 16, 16, 0.1)" }}
                             >
                                 Написать
@@ -91,7 +91,7 @@ export function HeroSection() {
                                 as="a"
                                 href="#cal"
                                 variant="bordered"
-                                className="w-full md:w-auto text-white border-[rgba(255,255,255,0.2)] p-2 pl-3 md:pl-4 text-sm md:text-base"
+                                className="cursor-target w-full md:w-auto text-white border-[rgba(255,255,255,0.2)] p-2 pl-3 md:pl-4 text-sm md:text-base"
                             >
                                 Получить оценку проекта
                             </Button>

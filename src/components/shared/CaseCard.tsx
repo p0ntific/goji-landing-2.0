@@ -10,7 +10,7 @@ interface CaseCardProps {
 
 export function CaseCard({ title, image, className, mobile }: CaseCardProps) {
     return (
-        <div className={cn("flex cursor-pointer group flex-col", className)}>
+        <div className={cn("cursor-target flex cursor-pointer group flex-col", className)}>
             <div
                 className={cn(
                     "relative aspect-square",
