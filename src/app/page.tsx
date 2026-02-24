@@ -7,7 +7,6 @@ import { CasesSection } from "@/components/sections/CasesSection";
 import { LatestProjectsSection } from "@/components/sections/LatestProjectsSection";
 import { HowWeWorkSection } from "@/components/sections/HowWeWorkSection";
 import { CalSection } from "@/components/sections/CalSection";
-import TargetCursor from "@/components/ui/TargetCursor";
 import { getCaseBySlug } from "@/lib/cases";
 
 const ORBIT_CASE_SLUGS = [
@@ -24,7 +23,6 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-white overflow-x-hidden">
-            <TargetCursor />
             <Header />
             <main className="md:pt-20 pt-16">
                 <HeroSection />

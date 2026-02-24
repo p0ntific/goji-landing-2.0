@@ -25,9 +25,21 @@ export function Header() {
                     <nav>
                         <Link
                             href="/cases"
-                            className="cursor-target text-[#101010] font-medium hover:opacity-80 transition-opacity"
+                            className="cursor-target group inline-flex items-center gap-2
+                 text-[#101010] font-medium text-lg
+                 hover:opacity-70
+                 transition-opacity duration-200"
                         >
-                            Портфолио
+                            {/* Звезда */}
+                            <svg
+                                className="w-4 h-4"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
+                            </svg>
+
+                            <span>Портфолио</span>
                         </Link>
                     </nav>
                 </div>

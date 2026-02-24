@@ -7,8 +7,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/cases/ScrollProgress";
 import {
-    CaseContentRenderer,
     BlockMetadata,
+    CaseContentRenderer,
 } from "@/components/cases/CaseContentRenderer";
 import { NdaGateInline } from "@/components/cases/NdaGateInline";
 import { SimilarCasesBlock } from "@/components/cases/SimilarCasesBlock";
@@ -52,7 +52,7 @@ export function CasePageClient({
                         const restBlocks = isMetadataFirst
                             ? content!.blocks.slice(1)
                             : (content?.blocks ?? []);
-                        const headerBg = "rgba(16,16,16,0.03)";
+                        const headerBg = "rgba(16,16,16,0.02)";
 
                         return (
                             <>
@@ -79,7 +79,7 @@ export function CasePageClient({
                                 </div>
 
                                 {hasAccess && content?.blocks ? (
-                                    <div className="mt-8">
+                                    <div className="mt-8 font-nevermind">
                                         <CaseContentRenderer
                                             blocks={restBlocks}
                                         />

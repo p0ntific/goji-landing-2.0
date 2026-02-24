@@ -91,7 +91,7 @@ export function HeroSection() {
                                 as="a"
                                 href="#cal"
                                 variant="bordered"
-                                className="cursor-target w-full md:w-auto text-white border-[rgba(255,255,255,0.2)] p-2 pl-3 md:pl-4 text-sm md:text-base"
+                                className="cursor-target w-full md:w-auto text-white border-[rgba(255,255,255,0.2)] py-2 px-4 text-sm md:text-base"
                             >
                                 Получить оценку проекта
                             </Button>
