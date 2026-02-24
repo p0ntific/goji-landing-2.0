@@ -7,10 +7,10 @@ import Link from "next/link";
 
 export function Header() {
     return (
-        <header className="bg-white">
+        <header className="sticky top-0 z-40 bg-white border-b border-[rgba(16,16,16,0.06)]">
             <Container>
-                <div className="flex h-16 md:h-24 px-[25px] md:px-12 items-center">
-                    <Link href="/" className="cursor-target flex items-center gap-2">
+                <div className="flex h-16 md:h-24 px-[25px] md:px-12 items-center justify-between">
+                    <Link href="/" className="flex items-center gap-2">
                         <Image
                             src={IMAGES.logo}
                             alt="Годжи"
@@ -22,6 +22,14 @@ export function Header() {
                             годжи
                         </span>
                     </Link>
+                    <nav>
+                        <Link
+                            href="/cases"
+                            className="text-[#101010] font-medium hover:opacity-80 transition-opacity"
+                        >
+                            Кейсы
+                        </Link>
+                    </nav>
                 </div>
             </Container>
         </header>

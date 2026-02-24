@@ -8,8 +8,16 @@ import { LatestProjectsSection } from "@/components/sections/LatestProjectsSecti
 import { HowWeWorkSection } from "@/components/sections/HowWeWorkSection";
 import { CalSection } from "@/components/sections/CalSection";
 import TargetCursor from "@/components/ui/TargetCursor";
+import { getCaseBySlug } from "@/lib/cases";
+
+const ORBIT_CASE_SLUGS = ["ai-cosmetologist", "hr-platform", "cv-production"] as const;
 
 export default function Home() {
+    const caseSlugs = ORBIT_CASE_SLUGS.flatMap((slug) => {
+        const c = getCaseBySlug(slug);
+        return c ? [c] : [];
+    });
+
     return (
         <div className="min-h-screen bg-white overflow-x-hidden">
             <TargetCursor />
@@ -19,7 +27,7 @@ export default function Home() {
                 <DirectionsSection />
                 <LatestProjectsSection />
                 <ProjectsInWorkSection />
-                <CasesSection />
+                <CasesSection caseSlugs={caseSlugs} />
                 <HowWeWorkSection />
                 <CalSection />
             </main>

@@ -1,0 +1,12 @@
+{
+    "slug": "ai-cosmetologist",
+    "title": "ИИ косметолог",
+    "description": "Система подбора косметики на основе искусственного интеллекта для персонализированных рекомендаций",
+    "badges": ["AI", "веб-разработка"],
+    "company": "годжи",
+    "year": "2024",
+    "image": "/case-01.png",
+    "cardLayout": "full",
+    "isNda": false,
+    "order": 0
+}

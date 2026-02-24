@@ -7,7 +7,7 @@ export const PROJECTS = [
     description:
       "И сэкономили время и деньги крупного контрагента в финансовом секторе",
     image: IMAGES.caseInWork01,
-    caseLink: "#",
+    caseLink: "/cases/real-estate-ai",
   },
   {
     headline:
@@ -15,12 +15,12 @@ export const PROJECTS = [
     description:
       "С ответвлениями по 4 направлениям, калькулятором, подбором и статьями",
     image: IMAGES.caseInWork02,
-    caseLink: "#",
+    caseLink: "/cases/modular-homes",
   },
   {
     headline: "Проект 3",
     description: "Описание третьего проекта",
     image: IMAGES.caseInWork03,
-    caseLink: "#",
+    caseLink: "/cases/project-3",
   },
 ] as const;

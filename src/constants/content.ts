@@ -1,6 +1,6 @@
 export const CONTENT = {
     calLink: "maksim-igitov/30min",
-    allCasesLink: "#",
+    allCasesLink: "/cases",
     privacyLink: "/documents/Политика_конфиденциальности.docx",
     writeLink: "https://t.me/MaksIgitov",
     footer: {

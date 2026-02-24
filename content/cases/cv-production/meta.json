@@ -1,0 +1,11 @@
+{
+    "slug": "cv-production",
+    "title": "CV для производства",
+    "badges": ["продуктовый дизайн", "веб"],
+    "company": "годжи",
+    "year": "2024",
+    "image": "/case-02.png",
+    "cardLayout": "half",
+    "isNda": false,
+    "order": 1
+}

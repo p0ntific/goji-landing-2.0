@@ -1,0 +1,12 @@
+{
+    "slug": "hr-platform",
+    "title": "HR платформа",
+    "description": "Внутренняя HR-система для управления сотрудниками, отпусками и документами",
+    "badges": ["продуктовый дизайн"],
+    "company": "годжи",
+    "year": "2023",
+    "image": "/case-03.png",
+    "cardLayout": "half",
+    "isNda": true,
+    "order": 2
+}

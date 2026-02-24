@@ -38,7 +38,7 @@ export function ProjectCard({
                     {description}
                 </p>
                 <div className="mt-6 md:mt-auto">
-                    <Button isDisabled variant="bordered" href={caseLink}>
+                    <Button variant="bordered" href={caseLink}>
                         Читать кейс
                     </Button>
                 </div>
