@@ -8,16 +8,6 @@
       ]
     },
     {
-      "type": "caseLink",
-      "slug": "modular-homes",
-      "title": "Модульные дома"
-    },
-    {
-      "type": "caseLink",
-      "slug": "project-3",
-      "title": "Проект 3"
-    },
-    {
       "type": "heading",
       "level": 2,
       "text": "Контекст"

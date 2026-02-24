@@ -8,22 +8,6 @@
       ]
     },
     {
-      "type": "link",
-      "text": "Обсудить похожий проект",
-      "href": "/#contact",
-      "external": false
-    },
-    {
-      "type": "caseLink",
-      "slug": "cv-production",
-      "title": "CV для производства"
-    },
-    {
-      "type": "caseLink",
-      "slug": "hr-platform",
-      "title": "HR платформа"
-    },
-    {
       "type": "heading",
       "level": 2,
       "text": "О проекте"

@@ -8,11 +8,6 @@
       ]
     },
     {
-      "type": "caseLink",
-      "slug": "ai-cosmetologist",
-      "title": "ИИ косметолог"
-    },
-    {
       "type": "heading",
       "level": 2,
       "text": "О проекте"
