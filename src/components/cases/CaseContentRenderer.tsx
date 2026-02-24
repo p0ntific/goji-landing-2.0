@@ -158,6 +158,7 @@ function BlockDownload({ block }: { block: ContentBlock }) {
         </div>
     );
 }
+
 function BlockFaq({ block }: { block: ContentBlock }) {
     const items =
         (block.items as Array<{ question: string; answer: string }>) ?? [];
@@ -165,51 +166,81 @@ function BlockFaq({ block }: { block: ContentBlock }) {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <div className="mt-8 max-w-[700px] mx-auto">
+        <div className="mt-8">
             {title && (
-                <h3 className="font-nevermind text-[22px] md:text-[28px] font-semibold text-[#101010] mb-6 text-center">
+                <h3 className="font-nevermind text-[22px] md:text-[28px] font-semibold text-[#101010] mb-6">
                     {title}
                 </h3>
             )}
-            {items.map((item, i) => {
-                const isOpen = openIndex === i;
-                return (
-                    <div
-                        key={i}
-                        className={cn(
-                            "border-b border-[rgba(16,16,16,0.1)]",
-                            i === 0 && "border-t",
-                        )}
-                    >
-                        <button
-                            type="button"
-                            onClick={() => setOpenIndex(isOpen ? null : i)}
-                            className="w-full flex justify-between items-center gap-4 py-5 md:py-6 text-left cursor-pointer group"
-                        >
-                            <span className="font-nevermind font-medium text-[16px] md:text-[18px] text-[#101010] group-hover:opacity-70 transition-opacity">
-                                {item.question}
-                            </span>
-                            <span className="w-6 h-6 flex items-center justify-center text-[20px] text-[rgba(16,16,16,0.4)] shrink-0">
-                                {isOpen ? "−" : "+"}
-                            </span>
-                        </button>
+            <div className="flex flex-col gap-3">
+                {items.map((item, i) => {
+                    const isOpen = openIndex === i;
+                    return (
                         <div
-                            className={cn(
-                                "grid transition-all duration-300 ease-out",
-                                isOpen
-                                    ? "grid-rows-[1fr] opacity-100"
-                                    : "grid-rows-[0fr] opacity-0",
-                            )}
+                            key={i}
+                            className="rounded-2xl border border-[rgba(16,16,16,0.1)] overflow-hidden"
                         >
-                            <div className="overflow-hidden">
-                                <p className="pb-5 md:pb-6 pr-10 text-[16px] md:text-[17px] text-[rgba(16,16,16,0.7)] leading-[1.7]">
-                                    {item.answer}
-                                </p>
+                            {/* Кнопка */}
+                            <button
+                                type="button"
+                                onClick={() => setOpenIndex(isOpen ? null : i)}
+                                className={cn(
+                                    "w-full flex justify-between items-center gap-4 p-5 md:p-6 text-left cursor-pointer transition-colors duration-300",
+                                    isOpen
+                                        ? "bg-blue-500"
+                                        : "bg-white hover:bg-[rgba(16,16,16,0.02)]",
+                                )}
+                            >
+                                <span
+                                    className={cn(
+                                        "font-nevermind font-medium text-[16px] md:text-[18px] transition-colors duration-300",
+                                        isOpen
+                                            ? "text-white"
+                                            : "text-[#101010]",
+                                    )}
+                                >
+                                    {item.question}
+                                </span>
+                                <span
+                                    className={cn(
+                                        "w-10 h-10 flex items-center justify-center text-[22px] rounded-full shrink-0 transition-all duration-300",
+                                        isOpen
+                                            ? "bg-white text-[#101010]"
+                                            : "bg-[rgba(16,16,16,0.05)] text-[rgba(16,16,16,0.5)]",
+                                    )}
+                                >
+                                    <span
+                                        className={cn(
+                                            "transition-transform duration-300 leading-none",
+                                            isOpen && "rotate-45",
+                                        )}
+                                    >
+                                        +
+                                    </span>
+                                </span>
+                            </button>
+
+                            {/* Контент */}
+                            <div
+                                className={cn(
+                                    "grid transition-[grid-template-rows] duration-300 ease-out",
+                                    isOpen
+                                        ? "grid-rows-[1fr]"
+                                        : "grid-rows-[0fr]",
+                                )}
+                            >
+                                <div className="overflow-hidden">
+                                    <div className="p-5 md:p-6 pt-0 bg-white">
+                                        <p className="pt-0 text-[16px] md:text-[17px] text-[rgba(16,16,16,0.7)] leading-[1.7]">
+                                            {item.answer}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
         </div>
     );
 }
@@ -281,7 +312,7 @@ function BlockCaseLink({ block }: { block: ContentBlock }) {
 
 export function CaseContentRenderer({ blocks }: CaseContentRendererProps) {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-2">
             {blocks.map((block, i) => {
                 switch (block.type) {
                     case "heading":
