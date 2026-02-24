@@ -11,20 +11,39 @@ interface CaseCardFullProps {
     className?: string;
 }
 
+const DEFAULT_CARD_HOVER_BG = "rgba(16,16,16,0.03)";
+
 export function CaseCardFull({ caseMeta, className }: CaseCardFullProps) {
-    const { slug, title, description, badges, company, year, image, isNda } = caseMeta;
+    const {
+        slug,
+        title,
+        description,
+        badges,
+        company,
+        year,
+        image,
+        isNda,
+        cardHoverBg,
+    } = caseMeta;
+    const hoverBg = cardHoverBg ?? DEFAULT_CARD_HOVER_BG;
 
     return (
-        <Link href={`/cases/${slug}`} className={cn("block transition-transform duration-200 hover:-translate-y-1", className)}>
+        <Link
+            href={`/cases/${slug}`}
+            className={cn(
+                "block transition-transform duration-400 hover:-translate-y-2 group",
+                className,
+            )}
+        >
             <Card
                 className={cn(
-                    "flex flex-col md:flex-row md:h-[400px] overflow-hidden",
+                    "flex flex-col md:flex-row md:h-[400px]",
                     "rounded-2xl border border-[rgba(16,16,16,0.1)] bg-white",
                 )}
                 shadow="none"
                 radius="lg"
             >
-                <div className="relative h-[220px] md:h-full w-full md:w-[400px] shrink-0 overflow-hidden">
+                <div className="relative h-[220px] md:h-full w-full md:w-[400px] shrink-0">
                     {image && (
                         <Image
                             src={image}
@@ -34,15 +53,25 @@ export function CaseCardFull({ caseMeta, className }: CaseCardFullProps) {
                         />
                     )}
                 </div>
-                <CardBody className="flex flex-1 flex-col p-6 md:p-[60px] justify-center gap-4 overflow-hidden">
-                    <div className="flex flex-wrap gap-2">
+                <CardBody
+                    className={cn(
+                        "flex flex-1 flex-col p-6 md:p-[60px] justify-center gap-4 overflow-hidden transition-colors duration-200",
+                        "group-hover:bg-[var(--card-hover-bg)] ",
+                    )}
+                    style={
+                        {
+                            ["--card-hover-bg" as string]: hoverBg,
+                        } as React.CSSProperties
+                    }
+                >
+                    <div className="case-badges flex flex-wrap gap-2">
                         {isNda && (
                             <Chip
                                 variant="flat"
                                 size="sm"
                                 radius="lg"
                                 classNames={{
-                                    base: "bg-[#ff4314]",
+                                    base: "bg-[#ff4314] group-hover:bg-white group-hover:text-[#101010]",
                                     content: "text-white font-medium",
                                 }}
                             >
@@ -73,7 +102,7 @@ export function CaseCardFull({ caseMeta, className }: CaseCardFullProps) {
                         {title}
                     </h3>
                     {description && (
-                        <p className="text-[18px] md:text-[22px] text-[rgba(16,16,16,0.6)]">
+                        <p className="text-[16px] md:text-[18px] text-[rgba(16,16,16,0.6)] leading-relaxed">
                             {description}
                         </p>
                     )}

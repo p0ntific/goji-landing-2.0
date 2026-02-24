@@ -15,6 +15,10 @@ export interface CaseMeta {
     publicationLogo?: string;
     isNda?: boolean;
     order?: number;
+    /** Цвет карточки (hex/rgba). full: hover фон из cardHoverBg; half: фон карточки */
+    pastelColor?: string;
+    /** Фон при наведении на большую карточку. По умолчанию rgba(16,16,16,0.03) */
+    cardHoverBg?: string;
 }
 
 export interface ContentBlock {

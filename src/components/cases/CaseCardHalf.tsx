@@ -15,12 +15,14 @@ export function CaseCardHalf({ caseMeta, className }: CaseCardHalfProps) {
     const { slug, title, badges, company, year, image, isNda } = caseMeta;
 
     return (
-        <Link href={`/cases/${slug}`} className={cn("block transition-transform duration-200 hover:-translate-y-1", className)}>
-            <div
-                className={cn(
-                    "relative overflow-hidden rounded-2xl border border-[rgba(16,16,16,0.1)] bg-white h-[400px]",
-                )}
-            >
+        <Link
+            href={`/cases/${slug}`}
+            className={cn(
+                "block transition-transform duration-400 hover:-translate-y-2",
+                className,
+            )}
+        >
+            <div className="relative overflow-hidden rounded-2xl border border-[rgba(16,16,16,0.1)] bg-white h-[400px]">
                 {image && (
                     <Image
                         src={image}

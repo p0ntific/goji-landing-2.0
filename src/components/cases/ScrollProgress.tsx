@@ -12,7 +12,10 @@ export function ScrollProgress() {
             const scrollHeight = document.documentElement.scrollHeight;
             const innerHeight = window.innerHeight;
             const totalScroll = Math.max(1, scrollHeight - innerHeight);
-            const value = Math.min(100, Math.max(0, (scrollTop / totalScroll) * 100));
+            const value = Math.min(
+                100,
+                Math.max(0, (scrollTop / totalScroll) * 100),
+            );
             setProgress(value);
         };
 
@@ -26,15 +29,14 @@ export function ScrollProgress() {
     }, []);
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-50">
+        <div className="fixed top-20 left-0 right-0 z-50">
             <Progress
                 value={progress}
-                size="md"
                 radius="none"
                 disableAnimation
                 classNames={{
-                    indicator: "bg-[#101010]",
-                    track: "bg-[rgba(16,16,16,0.1)]",
+                    track: "bg-[rgba(16,16,16,0.1)] h-2",
+                    indicator: "bg-[#101010] h-2",
                 }}
                 aria-label="Прогресс прокрутки"
             />

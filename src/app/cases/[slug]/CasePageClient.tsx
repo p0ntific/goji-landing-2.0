@@ -6,7 +6,10 @@ import { ArrowLeft } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/cases/ScrollProgress";
-import { CaseContentRenderer, BlockMetadata } from "@/components/cases/CaseContentRenderer";
+import {
+    CaseContentRenderer,
+    BlockMetadata,
+} from "@/components/cases/CaseContentRenderer";
 import { NdaGateInline } from "@/components/cases/NdaGateInline";
 import { SimilarCasesBlock } from "@/components/cases/SimilarCasesBlock";
 import type { CaseMeta, CaseContent } from "@/lib/cases";
@@ -38,14 +41,18 @@ export function CasePageClient({
         <div className="min-h-screen bg-white overflow-x-hidden">
             <ScrollProgress />
             <Header />
-            <main className="pt-16 md:pt-24 pb-12">
+            <main className="pt-20 md:pt-28 pb-12">
                 <div className="max-w-[1000px] mx-auto px-6">
                     {(() => {
                         const firstBlock = content?.blocks?.[0];
                         const isMetadataFirst = firstBlock?.type === "metadata";
-                        const headerBlocks = isMetadataFirst ? content!.blocks.slice(0, 1) : [];
-                        const restBlocks = isMetadataFirst ? content!.blocks.slice(1) : content?.blocks ?? [];
-                        const headerBg = content?.headerBg ?? "rgba(16,16,16,0.04)";
+                        const headerBlocks = isMetadataFirst
+                            ? content!.blocks.slice(0, 1)
+                            : [];
+                        const restBlocks = isMetadataFirst
+                            ? content!.blocks.slice(1)
+                            : (content?.blocks ?? []);
+                        const headerBg = "rgba(16,16,16,0.03)";
 
                         return (
                             <>
@@ -65,14 +72,21 @@ export function CasePageClient({
                                         {caseMeta.title}
                                     </h1>
                                     {headerBlocks.length > 0 && (
-                                        <BlockMetadata block={headerBlocks[0]} />
+                                        <BlockMetadata
+                                            block={headerBlocks[0]}
+                                        />
                                     )}
                                 </div>
 
                                 {hasAccess && content?.blocks ? (
                                     <div className="mt-8">
-                                        <CaseContentRenderer blocks={restBlocks} />
-                                        <SimilarCasesBlock cases={otherCases} currentSlug={caseMeta.slug} />
+                                        <CaseContentRenderer
+                                            blocks={restBlocks}
+                                        />
+                                        <SimilarCasesBlock
+                                            cases={otherCases}
+                                            currentSlug={caseMeta.slug}
+                                        />
                                     </div>
                                 ) : hasAccess && !content?.blocks ? (
                                     <p className="mt-8 text-[20px] text-[rgba(16,16,16,0.6)]">

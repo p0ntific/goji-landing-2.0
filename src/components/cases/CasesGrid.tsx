@@ -32,7 +32,7 @@ export function CasesGrid({ cases }: CasesGridProps) {
                 }
 
                 return (
-                    <div key={slug} className="md:col-span-2 overflow-hidden">
+                    <div key={slug} className="md:col-span-2">
                         <CaseCardFull caseMeta={caseMeta} />
                     </div>
                 );

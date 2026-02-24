@@ -1,7 +1,5 @@
 import { notFound, redirect } from "next/navigation";
 import { cookies } from "next/headers";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { getCaseBySlug, getCaseContent, getCases } from "@/lib/cases";
 import { CasePageClient } from "./CasePageClient";
 

@@ -9,7 +9,10 @@ interface CaseCardExternalProps {
     className?: string;
 }
 
-export function CaseCardExternal({ caseMeta, className }: CaseCardExternalProps) {
+export function CaseCardExternal({
+    caseMeta,
+    className,
+}: CaseCardExternalProps) {
     const {
         title,
         description,
@@ -21,8 +24,9 @@ export function CaseCardExternal({ caseMeta, className }: CaseCardExternalProps)
     const content = (
         <div
             className={cn(
-                "flex flex-col h-[400px] p-6 rounded-2xl",
-                "bg-[rgba(16,16,16,0.04)] hover:bg-[rgba(16,16,16,0.06)] transition-all duration-200 hover:-translate-y-1",
+                "flex flex-col h-[400px] p-6 rounded-2xl group",
+                "bg-[rgba(16,16,16,0.04)] transition-all duration-400 hover:-translate-y-2",
+                "hover:bg-[rgba(16,16,16,0.06)]",
                 className,
             )}
         >
@@ -30,7 +34,7 @@ export function CaseCardExternal({ caseMeta, className }: CaseCardExternalProps)
                 {title}
             </h3>
             {description && (
-                <p className="mt-3 text-[18px] md:text-[22px] text-[rgba(16,16,16,0.6)] flex-1">
+                <p className="mt-3 text-[19px] md:text-[23px] text-[rgba(16,16,16,0.6)] flex-1 leading-relaxed">
                     {description}
                 </p>
             )}
